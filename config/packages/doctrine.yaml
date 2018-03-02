@@ -19,6 +19,12 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         mappings:
+            Sonata:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/config/metadata/doctrine-sonata'
+                prefix: 'App\Entity\Sonata'
+                alias: Sonata
             App:
                 is_bundle: false
                 type: annotation
