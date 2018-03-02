@@ -1,0 +1,27 @@
+version: '3.2'
+
+services:
+    mysql:
+        ports:
+            - "3306:3306"
+        networks:
+          - default
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+          - 8080:80
+        networks:
+          - default
+        environment:
+            PMA_ARBITRARY: "1"
+            PMA_HOST: "mysql"
+            PMA_USER: "root"
+            PMA_PASSWORD: "${ENV_database_root_password}"
+        depends_on:
+          - mysql
+        volumes:
+          - /sessions
+
+networks:
+    default:
