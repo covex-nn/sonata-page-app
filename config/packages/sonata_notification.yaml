@@ -3,6 +3,6 @@ sonata_notification:
     backends:
         doctrine: ~
     class:
-        message: App\Entity\Sonata\NotificationMessage
+        message: 'App\Entity\Sonata\NotificationMessage'
     consumers:
         register_default: false
