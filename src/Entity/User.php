@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity
@@ -19,17 +21,16 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * Get user roles as a string
-     *
-     * @return string
+     * Get user roles as a string.
      */
-    public function getRolesAsString()
+    public function getRolesAsString(): string
     {
         $roles = $this->getRoles();
-        if (sizeof($roles) > 1 && in_array(self::ROLE_DEFAULT, $roles)) {
+        if (count($roles) > 1 && in_array(self::ROLE_DEFAULT, $roles)) {
             $index = array_search(self::ROLE_DEFAULT, $roles);
             unset($roles[$index]);
         }
-        return implode(", ", $roles);
+
+        return implode(', ', $roles);
     }
 }

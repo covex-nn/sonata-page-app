@@ -1,0 +1,57 @@
+sonata_admin:
+    assets:
+        extra_javascripts:
+            - bundles/ivoryckeditor/ckeditor.js
+            - bundles/sonataformatter/vendor/markitup-markitup/markitup/jquery.markitup.js
+            - bundles/sonataformatter/markitup/sets/markdown/set.js
+            - bundles/sonataformatter/markitup/sets/html/set.js
+            - bundles/sonataformatter/markitup/sets/textile/set.js
+
+        extra_stylesheets:
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
+
+sonata_block:
+    blocks:
+        sonata.formatter.block.formatter: ~
+
+sonata_formatter:
+    ckeditor:
+        templates:
+            browser: '@SonataFormatter/Ckeditor/browser.html.twig'
+            upload: '@SonataFormatter/Ckeditor/upload.html.twig'
+    default_formatter: richhtml
+    formatters:
+        richhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        rawhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+        text:
+            service: sonata.formatter.text.text
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+                - sonata.media.formatter.twig
+
+#        markdown:
+#            service: sonata.formatter.text.markdown
+#            extensions:
+#                - sonata.formatter.twig.control_flow
+#                - sonata.formatter.twig.gist
+#                - sonata.media.formatter.twig #keep this commented unless you are using media bundle.
+#
+#        twig:
+#            service: sonata.formatter.text.twigengine
+#            extensions: [] # Twig formatter cannot have extensions

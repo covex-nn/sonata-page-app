@@ -8,6 +8,8 @@
         "friendsofsymfony/user-bundle": "^2.1",
         "jms/serializer-bundle": "^2.3",
         "sonata-project/doctrine-orm-admin-bundle": "^3.4",
+        "sonata-project/formatter-bundle": "^3.4",
+        "sonata-project/media-bundle": "^3.11",
         "sonata-project/page-bundle": "^3.8",
         "symfony/console": "^3.4",
         "symfony/flex": "^1.0",
@@ -18,7 +20,9 @@
     },
     "require-dev": {
         "symfony/dotenv": "^3.4",
-        "symfony/phpunit-bridge": "3.4"
+        "symfony/phpunit-bridge": "3.4",
+        "symfony/stopwatch": "^3.4",
+        "symfony/web-profiler-bundle": "^3.4"
     },
     "config": {
         "preferred-install": {
