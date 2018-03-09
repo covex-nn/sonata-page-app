@@ -1,4 +1,5 @@
-
+/storage
+/public/upload
 ###> symfony/framework-bundle ###
 /public/bundles/
 /var/

@@ -10,7 +10,7 @@ use Sonata\MediaBundle\Entity\BaseMedia;
 use Sonata\MediaBundle\Model\GalleryHasMediaInterface;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\SonataMediaMediaRepository")
  * @ORM\Table(name="media__media")
  * @ORM\HasLifecycleCallbacks
  */
