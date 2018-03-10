@@ -5,7 +5,9 @@ sonata_block:
 sonata_admin:
     assets:
         extra_javascripts:
-            - bundles/sonatapage/sonata-page.back.min.js
+            - issue-972/composer.js
+            - issue-972/treeview.js
+#            - bundles/sonatapage/sonata-page.back.min.js
         extra_stylesheets:
             - bundles/sonatapage/sonata-page.back.min.css
 
